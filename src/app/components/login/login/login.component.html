@@ -1,4 +1,5 @@
 <div class="login-form-container">
+
   <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="logar()">
     <nz-form-item>
       <nz-form-control nzErrorTip="Por favor insira seu login">
@@ -10,6 +11,7 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
+
     <nz-form-item>
       <nz-form-control nzErrorTip="Por favor insiria sua senha">
         <nz-input-group nzPrefixIcon="lock">
@@ -17,18 +19,21 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
+
     <div nz-row class="login-form-margin">
       <div nz-col [nzSpan]="12">
         <input type="checkbox" formControlName="remember" />
             <span>Lembre me</span>
       </div>
+
       <div nz-col [nzSpan]="12">
-        <a class="login-form-forgot">Esqueceu a senha?</a>
+        <a class="login-form-forgot" routerLink="/login-recuperar">Esqueceu a senha?</a>
       </div>
     </div>
+
     <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Entrar</button>
     Ou
-    <a>Cadastre-se agora</a>
+    <a routerLink="/login-create">Cadastre-se agora</a>
   </form>
 </div>
 

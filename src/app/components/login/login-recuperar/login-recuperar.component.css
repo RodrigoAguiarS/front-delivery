@@ -9,17 +9,10 @@
   max-width: 300px;
 }
 
-.login-form-margin {
-  margin-bottom: 16px;
-}
-
-.login-form-forgot {
-  float: right;
-}
-
 .login-form-button {
   width: 100%;
 }
+
 /* Estilos para o nz-input-group */
 nz-input-group {
   display: flex;
@@ -28,7 +21,7 @@ nz-input-group {
 }
 
 /* Estilos para o ícone prefixo */
-nz-input-group .anticon-user {
+nz-input-group .anticon-mail {
   color: #ccc;
   margin-right: 8px;
 }
@@ -53,4 +46,3 @@ nz-input-group input:focus {
   border-color: #1890ff;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
-

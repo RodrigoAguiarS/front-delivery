@@ -15,6 +15,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { HeaderComponent } from './components/header/header/header.component';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { LoginCreateComponent } from './components/login/login-create/login-create.component';
+import { LoginRecuperarComponent } from './components/login/login-recuperar/login-recuperar.component';
+
 
 
 
@@ -24,7 +27,9 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginCreateComponent,
+    LoginRecuperarComponent
   ],
   imports: [
     BrowserModule,
