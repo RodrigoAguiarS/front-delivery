@@ -1,0 +1,57 @@
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+/* Estilos para o nz-input-group */
+nz-input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Estilos para o ícone prefixo */
+nz-input-group .anticon-user {
+  color: #ccc;
+  margin-right: 8px;
+}
+
+/* Estilos para o input */
+nz-input-group input {
+  flex: 1;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Estilos para o placeholder do input */
+nz-input-group input::placeholder {
+  color: #999;
+}
+
+/* Estilos para o input quando está em foco */
+nz-input-group input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
