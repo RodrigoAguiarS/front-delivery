@@ -44,3 +44,7 @@ nz-input-group input:focus {
   border-color: #1890ff;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
+.login-form-button {
+  width: 100%;
+  margin-bottom: 5px;
+}

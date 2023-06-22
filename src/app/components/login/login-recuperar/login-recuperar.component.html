@@ -1,19 +1,21 @@
 <div class="login-form-container">
   <form nz-form [formGroup]="recuperarForm" class="login-form" (submit)="recuperarSenha()">
 
+
     <nz-form-item>
         <nz-form-control [nzErrorTip]="emailErrorTpl">
-          <nz-input-group nzPrefixIcon="email">
+          <nz-input-group>
             <ng-template #emailErrorTpl let-control>
               <ng-container *ngIf="control.hasError('email')">Formado do email inválido!</ng-container>
               <ng-container *ngIf="control.hasError('required')">Por favor insira seu email!</ng-container>
             </ng-template>
-            <input type="email" nz-input [(ngModel)]="email.email" formControlName="email" placeholder="E-mail" />
+            <input type="email" nz-input [(ngModel)]="email.email" formControlName="email"
+            placeholder="Insira seu email" />
           </nz-input-group>
         </nz-form-control>
     </nz-form-item>
 
-    <button nz-button  nzType="primary" class="login-form-button">Recuperar senha</button>
+    <button nz-button  nzType="primary" class="login-form-button" [disabled]="!recuperarForm.valid">Recuperar senha</button>
     <button nz-button nzType="default" class="login-form-button" (click)="cancel()">Cancelar</button>
 
   </form>

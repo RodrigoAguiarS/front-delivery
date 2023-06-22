@@ -9,8 +9,10 @@
   max-width: 300px;
 }
 
-.login-form-button {
+.login-form-button,
+[nz-button] {
   width: 100%;
+  margin-bottom: 12px;
 }
 
 /* Estilos para o nz-input-group */

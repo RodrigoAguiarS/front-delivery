@@ -15,6 +15,7 @@ export class LoginCreateComponent implements OnInit {
 
   validateForm!: FormGroup;
 
+
   public usuario: Usuario = {
     nome: '',
     email: '',

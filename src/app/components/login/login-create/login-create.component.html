@@ -1,5 +1,5 @@
 <div class="container">
-  <form nz-form [formGroup]="validateForm" class="create-form"(ngSubmit)="create()">
+  <form nz-form [formGroup]="validateForm" class="create-form" (ngSubmit)="create()">
     <nz-form-item>
       <nz-form-label [nzSpan]="7" nzRequired>Nome</nz-form-label>
       <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="nomeErrorTpl">
@@ -67,9 +67,9 @@
 
     <nz-form-item>
       <nz-form-control [nzOffset]="7" [nzSpan]="12">
-        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Cadastrar</button>
-        <button nz-button nzType="default" (click)="cancel()">Cancelar</button>
-        <button nz-button nzType="default" (click)="resetForm($event)">Reset</button>
+        <button nz-button class="login-form-button" nzType="primary" [disabled]="!validateForm.valid">Cadastrar</button>
+        <button nz-button class="login-form-button" nzType="default" (click)="cancel()">Cancelar</button>
+        <button nz-button class="login-form-button" nzType="default" (click)="resetForm($event)">Reset</button>
       </nz-form-control>
     </nz-form-item>
   </form>

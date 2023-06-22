@@ -10,16 +10,19 @@
 }
 
 .login-form-margin {
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 
 .login-form-forgot {
   float: right;
 }
 
-.login-form-button {
+.login-form-button,
+[nz-button] {
   width: 100%;
+  margin-bottom: 12px;
 }
+
 /* Estilos para o nz-input-group */
 nz-input-group {
   display: flex;
@@ -53,4 +56,5 @@ nz-input-group input:focus {
   border-color: #1890ff;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
+
 

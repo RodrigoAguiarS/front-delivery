@@ -17,6 +17,9 @@ import { HeaderComponent } from './components/header/header/header.component';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { LoginCreateComponent } from './components/login/login-create/login-create.component';
 import { LoginRecuperarComponent } from './components/login/login-recuperar/login-recuperar.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 
 
@@ -29,7 +32,8 @@ import { LoginRecuperarComponent } from './components/login/login-recuperar/logi
     HomeComponent,
     HeaderComponent,
     LoginCreateComponent,
-    LoginRecuperarComponent
+    LoginRecuperarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,11 @@ import { LoginRecuperarComponent } from './components/login/login-recuperar/logi
     HttpClientModule,
     NzCardModule,
     NzMessageModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+    NzInputModule,
+    NzTypographyModule,
+    NzSpaceModule
+
 
   ],
   providers: [NzIconService],

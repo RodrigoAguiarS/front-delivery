@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
+  checked = true;
+
 
   creds: Credenciais = {
     email: '',
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      remember: [true]
+      remember: [false]
     });
   }
 }
