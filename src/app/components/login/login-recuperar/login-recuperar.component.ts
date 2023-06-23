@@ -4,8 +4,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Email } from 'src/app/models/email';
-import { NzIconService } from 'ng-zorro-antd/icon';
-import { MailOutline, MailTwoTone } from '@ant-design/icons-angular/icons';
 
 @Component({
   selector: 'app-login-recuperar',

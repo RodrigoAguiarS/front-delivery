@@ -37,19 +37,27 @@ export class LoginCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.usuario).subscribe(() => {
-      console.log(this.usuario)
-      this.messageService.success('cadastrado com sucesso');
-      this.router.navigate(['login']);
-    }, ex => {
-      if (ex.error.errors) {
-        ex.error.errors.forEach((element: { message: string }) => {
-          this.messageService.error(element.message);
-        });
-      } else {
-        this.messageService.error("ex.error.message");
+        console.log(this.usuario);
+        this.messageService.success('Cadastrado com sucesso');
+        this.router.navigate(['login']);
+      },
+      (error) => {
+        if (error.status === 500) {
+          this.messageService.error('Email já existe na base de dados.');
+        } else if (error.error.errors) {
+          error.error.errors.forEach((element: { message: string }) => {
+            this.messageService.error(element.message);
+          });
+        } else if (error.error.message) {
+          this.messageService.error(error.error.message);
+        } else {
+          this.messageService.error('Ocorreu um erro ao processar a solicitação.');
+        }
       }
-    });
+    );
   }
+
+
 
   cancel(): void {
     this.router.navigate(['login']);

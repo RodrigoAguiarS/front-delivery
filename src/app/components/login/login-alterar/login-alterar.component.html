@@ -1,0 +1,37 @@
+<div *ngIf="uidValido">
+  <div class="login-form-container">
+    <form nz-form [formGroup]="recuperarForm" class="login-form" (submit)="atualizarSenha()">
+
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="senhaErrorTpl">
+          <ng-template #senhaErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('senha')">Formato de senha inválido</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Insira sua nova senha!</ng-container>
+          </ng-template>
+          <input type="password" nz-input [(ngModel)]="senha.senha" formControlName="senha" placeholder="Insira sua nova senha"
+          (ngModelChange)="validateConfirmPassword()"/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="passwordErrorTpl">
+          <input nz-input type="password" formControlName="confirm" placeholder="Confirme sua senha" />
+          <ng-template #passwordErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Por favor, confirme sua senha</ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">As senhas não conferem</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <button nz-button nzType="primary" class="login-form-button" [disabled]="!recuperarForm.valid">Alterar senha</button>
+      <button nz-button nzType="default" class="login-form-button" (click)="cancel()">Cancelar</button>
+
+    </form>
+  </div>
+</div>
+
+<div class="centered-container">
+  <div *ngIf="!uidValido">
+    <nz-empty [nzNotFoundContent]="null"></nz-empty>
+  </div>
+</div>

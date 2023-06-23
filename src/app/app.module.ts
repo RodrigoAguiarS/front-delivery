@@ -20,7 +20,8 @@ import { LoginRecuperarComponent } from './components/login/login-recuperar/logi
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-
+import { LoginAlterarComponent } from './components/login/login-alterar/login-alterar.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 
 
@@ -33,6 +34,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     HeaderComponent,
     LoginCreateComponent,
     LoginRecuperarComponent,
+    LoginAlterarComponent,
 
   ],
   imports: [
@@ -49,7 +51,8 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzPageHeaderModule,
     NzInputModule,
     NzTypographyModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzEmptyModule
 
 
   ],

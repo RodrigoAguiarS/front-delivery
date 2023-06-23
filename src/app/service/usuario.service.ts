@@ -18,6 +18,18 @@ export class UsuarioService {
 
   recuperarSenha(email: string): Observable<string> {
     const request: Email = { email: email };
-    return this.http.post<string>(`${API_CONFIG.baseUrl}/reset-password`, request);
+    return this.http.post<string>(`${API_CONFIG.baseUrl}/login-alterar`, request);
+  }
+
+  atualizarSenha(uid: string, novaSenha: string): Observable<string> {
+    const request = {
+      uid: uid,
+      senha: novaSenha
+    };
+    return this.http.post<string>(`${API_CONFIG.baseUrl}/login-alterar/${uid}`, request);
+  }
+
+  verificarUid(uid: string): Observable<string> {
+    return this.http.get(`${API_CONFIG.baseUrl}/login-alterar/${uid}`, { responseType: 'text' });
   }
 }
