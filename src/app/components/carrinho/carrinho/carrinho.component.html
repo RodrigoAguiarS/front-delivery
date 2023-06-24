@@ -1,0 +1,31 @@
+<nz-badge [nzCount]="carrinhoService.getQuantidadeItens()" [nzOverflowCount]="99">
+  <table nz-table nzSize="middle">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Preço Unitário</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of carrinhoService.getItensVenda()">
+        <td>{{ item.produto.nome }}</td>
+        <td>{{ item.quantidade }}</td>
+        <td>{{ item.produto.preco }}</td>
+        <td>{{ item.produto.preco * item.quantidade }}</td>
+        <td><button nz-button nzType="default" nzSize="small" (click)="removerItem(item)">Remover</button></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong>Total:</strong></td>
+        <td>{{ carrinhoService.getValorTotal() | currency }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</nz-badge>
+
+

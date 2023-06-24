@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
         this.messageService.success('Login realizado com sucesso!');
         this.router.navigate(['home']);
       },
-      () => {
-        this.messageService.error('Usuário e/ou senha inválidas');
+      (error) => {
+        console.log(error)
+        this.messageService.error('Usuário e/ou senha inválidas', error);
       }
     );
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/models/cliente';
+import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
@@ -17,6 +17,7 @@ export class LoginCreateComponent implements OnInit {
 
 
   public usuario: Usuario = {
+    id:0,
     nome: '',
     email: '',
     senha: '',
@@ -36,20 +37,19 @@ export class LoginCreateComponent implements OnInit {
               private router: Router,) { }
 
   create(): void {
-    this.service.create(this.usuario).subscribe(() => {
-        console.log(this.usuario);
+    this.service.create(this.usuario).subscribe(
+      (resposta) => {
+        console.log(resposta);
         this.messageService.success('Cadastrado com sucesso');
         this.router.navigate(['login']);
       },
       (error) => {
-        if (error.status === 500) {
-          this.messageService.error('Email já existe na base de dados.');
-        } else if (error.error.errors) {
+        if (error.error && error.error.message) {
+          this.messageService.error(error.error.message);
+        } else if (error.error && error.error.errors) {
           error.error.errors.forEach((element: { message: string }) => {
             this.messageService.error(element.message);
           });
-        } else if (error.error.message) {
-          this.messageService.error(error.error.message);
         } else {
           this.messageService.error('Ocorreu um erro ao processar a solicitação.');
         }
@@ -57,19 +57,17 @@ export class LoginCreateComponent implements OnInit {
     );
   }
 
-
-
   cancel(): void {
     this.router.navigate(['login']);
   }
 
   ngOnInit() {
     this.validateForm = this.fb.group({
-      nome: ['', [Validators.required]],
+      nome: ['', [Validators.required], [Validators.minLength(3)]],
       email: ['', [Validators.email, Validators.required]],
       senha: ['', [Validators.required]],
       confirm: ['', [this.confirmValidator]],
-      numeroCasa: ['', [Validators.required]],
+      numeroCasa: ['', [Validators.required],[Validators.maxLength(6)]],
       cep: ['', [Validators.required, Validators.pattern(/^\d{5}-?\d{3}$/)]],
     })
   }

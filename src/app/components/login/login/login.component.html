@@ -8,10 +8,10 @@
             <i nz-icon nzType="user"></i>
           </ng-template>
           <input type="email" nz-input [(ngModel)]="creds.email" formControlName="userName"
-          placeholder="Insira seu email" />
+            placeholder="Insira seu email" />
         </nz-input-group>
       </nz-form-control>
-  </nz-form-item>
+    </nz-form-item>
 
     <nz-form-item>
       <nz-form-control nzErrorTip="Por favor insiria sua senha">
@@ -22,7 +22,7 @@
     </nz-form-item>
 
     <div nz-row class="login-form-margin">
-        <a class="login-form-forgot" routerLink="/login-recuperar">Esqueceu a senha?</a>
+      <a class="login-form-forgot" routerLink="/login-recuperar">Esqueceu a senha?</a>
     </div>
 
     <button nz-button class="login-form-button" [disabled]="!validateForm.valid" [nzType]="'primary'">Entrar</button>

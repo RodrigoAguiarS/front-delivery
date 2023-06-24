@@ -1,0 +1,50 @@
+.product-card {
+  width: 300px;
+  margin: 16px;
+  padding: 16px;
+  display: inline-block; /* Adicionado para exibir os cards em linha */
+}
+
+.product-card-info {
+  margin-left: 16px;
+}
+
+.product-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-card-description {
+  margin-top: 8px;
+  color: #888;
+}
+
+.product-card-price {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.product-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.product-card-quantity {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+.login-form-button,
+[nz-button] {
+  margin-bottom: 6px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}

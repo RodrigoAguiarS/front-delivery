@@ -1,0 +1,23 @@
+<nz-card *ngFor="let produto of produtos" class="product-card" nzHoverable nzShadow="hover">
+  <div nz-card-meta>
+    <div nz-avatar nzSrc="assets/images/product-image.jpg" nzSize="large"></div>
+    <div class="product-card-info">
+      <div class="product-card-title">{{ produto.nome }}</div>
+      <div class="product-card-description">{{ produto.descricao }}</div>
+      <div class="product-card-description">{{ produto.categoria }}</div>
+      <div class="product-card-price">Preço: R$ {{ produto.preco | number: '1.2-2' }}</div>
+    </div>
+  </div>
+  <div nz-card-actions>
+    <button nz-button nzType="primary" (click)="decreaseQuantity(produto)">-</button>
+    <span class="product-card-quantity">{{ getQuantidade(produto.id) }}</span>
+    <button nz-button nzType="primary" (click)="addToCart(produto)">+</button>
+  </div>
+</nz-card>
+
+<div nz-card-actions>
+  <span class="product-card-quantity">{{ getCarrinhoQuantity() }}</span>
+  <button nz-button nzType="primary" (click)="submitVenda()">Submeter Venda</button>
+</div>
+
+

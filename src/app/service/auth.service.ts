@@ -1,4 +1,4 @@
-import { User } from './../models/usuario';
+import { User } from '../models/user';
 import { API_CONFIG } from './../config/api.config';
 import { Credenciais } from './../models/credenciais';
 import { Injectable } from '@angular/core';

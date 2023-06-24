@@ -22,6 +22,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { LoginAlterarComponent } from './components/login/login-alterar/login-alterar.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { ProdutoListComponent } from './components/produto/produto-list/produto-list.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho/carrinho.component';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+
 
 
 
@@ -35,6 +39,8 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
     LoginCreateComponent,
     LoginRecuperarComponent,
     LoginAlterarComponent,
+    ProdutoListComponent,
+    CarrinhoComponent,
 
   ],
   imports: [
@@ -52,7 +58,9 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
     NzInputModule,
     NzTypographyModule,
     NzSpaceModule,
-    NzEmptyModule
+    NzEmptyModule,
+    NzBadgeModule,
+
 
 
   ],
